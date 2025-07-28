@@ -15,4 +15,4 @@
             <!-- Bisa tambahkan pintasan lain di sini -->
         </div>
     </div>
-</x-layouts.app>
+</x-layouts.app
