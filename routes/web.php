@@ -8,6 +8,12 @@ use App\Livewire\Dashboard;
 use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
+use App\Exports\StudentReportExport;
+use Maatwebsite\Excel\Facades\Excel;
+
+Route::get('/laporan/export', function () {
+    return Excel::download(new StudentReportExport, 'laporan_siswa.xlsx');
+})->name('laporan.export');
 
 Route::get('/', function () {
     return view('welcome');

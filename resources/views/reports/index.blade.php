@@ -1,6 +1,12 @@
 <x-layouts.app title="Laporan Siswa">
     <h1 class="text-2xl font-bold mb-4">Laporan Siswa</h1>
 
+    <!-- Tombol Export -->
+    <a href="{{ route('laporan.export') }}" class="mb-4 inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
+        Export Excel
+    </a>
+
+    <!-- Tabel -->
     <table class="w-full table-auto border">
         <thead>
             <tr class="bg-gray-100">
