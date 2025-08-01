@@ -1,68 +1,61 @@
-# 💰 Web Kas Kelas Sekolah
+# 📊 **Kas Kelas Digital** - Aplikasi Manajemen Keuangan Kelas
 
-Selamat datang di **Web Kas Kelas**, aplikasi web yang dirancang khusus untuk membantu pengelolaan keuangan kelas secara transparan, efisien, dan real-time!
+**Aplikasi web sederhana untuk memudahkan pengelolaan kas kelas sekolah dengan fitur lengkap dan antarmuka yang ramah pengguna!**
 
-![Screenshot](https://via.placeholder.com/800x400.png?text=Demo+Tampilan+Web+Kas+Kelas) <!-- Ganti dengan URL gambar asli -->
+![Preview Aplikasi](https://via.placeholder.com/800x400?text=Kas+Kelas+Digital+Preview)
 
----
+## 🌟 **Fitur Unggulan**
+- ✅ **Pencatatan Transaksi** (Pemasukan/Pengeluaran)
+- 📊 **Laporan Keuangan Otomatis** (Harian/Mingguan/Bulanan)
+- 👥 **Manajemen Anggota Kelas**
+- 🔐 **Autentikasi Pengguna** (Admin & Anggota)
+- 📱 **Responsive Design** (Akses dari HP/PC)
+- 📤 **Ekspor Data** (Excel/PDF)
 
-## 🧾 Apa Itu Web Kas Kelas?
+## 🛠 **Teknologi Yang Digunakan**
+- **Frontend**: HTML5, CSS3, JavaScript, Bootstrap
+- **Backend**: PHP Native / Laravel (pilihan)
+- **Database**: MySQL
+- **Hosting**: Gratis (000webhost/XAMPP)
 
-Web Kas Kelas adalah sistem pencatatan kas berbasis web untuk lingkungan sekolah yang memungkinkan siswa, bendahara, dan wali kelas memantau keuangan kelas secara langsung — kapan saja dan di mana saja.
+## 📥 **Panduan Instalasi**
+1. Clone repo ini:
+   ```bash
+   git clone https://github.com/username/kas-kelas-digital.git
+   ```
+2. Import database dari file `database/kas_kelas.sql`
+3. Konfigurasi koneksi database di `config.php`
+4. Akses via browser:
+   ```
+   http://localhost/kas-kelas-digital
+   ```
 
----
+## 🔐 **Login Default**
+- **Admin**: 
+  - Username: admin
+  - Password: admin123
+- **User**: 
+  - Username: user
+  - Password: user123
 
-## 🎯 Fitur Unggulan
+## 📸 **Demo Aplikasi**
+![Tampilan Dashboard](https://via.placeholder.com/400?text=Dashboard+Preview)
+![Tampilan Transaksi](https://via.placeholder.com/400?text=Transaksi+Preview)
 
-✅ **Dashboard Ringkas & Informatif**  
-📅 **Riwayat Transaksi Lengkap**  
-📥 **Catat Pemasukan & Pengeluaran dengan Mudah**  
-📊 **Grafik Keuangan Otomatis**  
-🔐 **Login Siswa & Admin**  
-📤 **Ekspor Laporan ke Excel atau PDF**  
-🔎 **Filter & Pencarian Transaksi**
+## 🤝 **Kontribusi**
+Kami terbuka untuk kontribusi! Silakan fork project ini dan buat Pull Request dengan perubahan Anda.
 
----
-
-## 👨‍🏫 Manfaat untuk Sekolah & Siswa
-
-- Transparansi keuangan kelas
-- Menghindari pencatatan manual yang rawan hilang
-- Monitoring saldo secara real-time
-- Meningkatkan keterlibatan siswa dalam manajemen keuangan
-
----
-
-## 🚀 Cara Menggunakan
-
-1. **Login** ke sistem sebagai Admin, Bendahara, atau Siswa.
-2. Akses menu **Transaksi** untuk menambah pemasukan atau pengeluaran.
-3. Lihat laporan kas pada menu **Laporan** atau **Grafik**.
-4. Ekspor laporan jika dibutuhkan.
-
----
-
-## 🛠️ Teknologi yang Digunakan
-
-- 🌐 **Frontend**: HTML, CSS, JavaScript (Bootstrap)
-- 🧠 **Backend**: PHP / Node.js *(tergantung versi Anda)*
-- 💾 **Database**: MySQL / Firebase / MongoDB
-- ☁️ **Hosting**: Localhost / Web Server Sekolah
-
----
-
-## 💬 Kontak & Kontribusi
-
-Ingin menyumbang ide atau melaporkan bug?  
-Silakan buka [Issues](https://github.com/username/project/issues) atau hubungi kami melalui email: **kaskelassekolah@example.com**
+## 📜 **Lisensi**
+Project ini dilisensikan dibawah [MIT License](LICENSE).
 
 ---
 
-## 📜 Lisensi
+**✨ Siap mengubah pengelolaan kas kelas menjadi lebih modern dan efisien?**  
+_Coba sekarang dan rasakan kemudahannya!_
 
-MIT License – Gratis digunakan dan dimodifikasi selama menyertakan atribusi kepada pembuat.
+🚀 **Download Sekarang** → [Link Download](#)  
+📧 **Pertanyaan?** → email@example.com  
 
 ---
 
-> 📌 Proyek ini dibuat sebagai kontribusi nyata untuk membantu pengelolaan keuangan kelas menjadi lebih rapi, jujur, dan modern.
-
+_Dikembangkan dengan ❤️ oleh [Nama Anda/Tim Anda] untuk pendidikan Indonesia yang lebih baik!_
