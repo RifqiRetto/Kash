@@ -34,10 +34,16 @@ class Register extends Component
 
         $validated['password'] = Hash::make($validated['password']);
 
-        event(new Registered(($user = User::create($validated))));
+        event(new Registered(($user = User::create([
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'password' => $validated['password'],
+            'role' => 'viewer', // <-- default role
+        ]))));
 
         Auth::login($user);
 
         $this->redirect(route('dashboard', absolute: false), navigate: true);
     }
 }
+
