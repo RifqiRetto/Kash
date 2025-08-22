@@ -1,44 +1,68 @@
 <x-layouts.app title="Manajemen Siswa">
     <div class="p-6">
-        <div class="flex justify-between items-center mb-4">
-            <h1 class="text-xl font-bold">Daftar Siswa</h1>
-            <a href="{{ route('students.create') }}" class="bg-blue-500 text-white px-4 py-2 rounded">Tambah Siswa</a>
+        <!-- Header -->
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-2xl font-bold text-gray-800">Daftar Siswa</h1>
+            <a href="{{ route('students.create') }}"
+               class="mb-2 inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded shadow transition">
+                ➕ Tambah Siswa
+            </a>
         </div>
 
+        <!-- Notifikasi -->
         @if (session('success'))
-            <div class="mb-4 text-green-600">{{ session('success') }}</div>
+            <div class="mb-4 bg-emerald-100 text-emerald-700 px-4 py-2 rounded-lg shadow">
+                ✅ {{ session('success') }}
+            </div>
         @endif
 
-        <table class="w-full table-auto border border-gray-300">
-            <thead class="bg-gray-100">
-                <tr>
-                    <th class="p-2 border">NIS</th>
-                    <th class="p-2 border">Nama</th>
-                    <th class="p-2 border">Saldo</th>
-                    <th class="p-2 border">Aksi</th>
-                </tr>
-            </thead>
-            <tbody>
-                @forelse ($students as $student)
+        <!-- Tabel -->
+        <div class="bg-white rounded-lg shadow overflow-hidden">
+            <table class="w-full table-auto border-collapse">
+                <thead class="bg-gray-50">
                     <tr>
-                        <td class="p-2 border">{{ $student->nis }}</td>
-                        <td class="p-2 border">{{ $student->name }}</td>
-                        <td class="p-2 border">Rp{{ number_format($student->total_saldo, 2) }}</td>
-                        <td class="p-2 border space-x-2">
-                            <a href="{{ route('students.edit', $student) }}" class="text-blue-500">Edit</a>
-                            <form action="{{ route('students.destroy', $student) }}" method="POST" class="inline-block" onsubmit="return confirm('Yakin hapus siswa?')">
-                                @csrf @method('DELETE')
-                                <button class="text-red-500">Hapus</button>
-                            </form>
-                        </td>
+                        <th class="px-4 py-3 text-left text-sm font-semibold text-gray-600">NIS</th>
+                        <th class="px-4 py-3 text-left text-sm font-semibold text-gray-600">Nama</th>
+                        <th class="px-4 py-3 text-left text-sm font-semibold text-gray-600">Saldo</th>
+                        <th class="px-4 py-3 text-center text-sm font-semibold text-gray-600">Aksi</th>
                     </tr>
-                @empty
-                    <tr><td colspan="4" class="p-4 text-center">Tidak ada data siswa</td></tr>
-                @endforelse
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @forelse ($students as $student)
+                        <tr class="hover:bg-gray-50 transition">
+                            <td class="px-4 py-3 text-sm text-gray-800 border-t">{{ $student->nis }}</td>
+                            <td class="px-4 py-3 text-sm text-gray-800 border-t">{{ $student->name }}</td>
+                            <td class="px-4 py-3 text-sm text-gray-800 border-t">Rp{{ number_format($student->total_saldo, 2) }}</td>
+                            <td class="px-4 py-3 text-center border-t">
+                                <div class="flex justify-center gap-2">
+                                    <!-- Tombol Edit -->
+                                    <a href="{{ route('students.edit', $student) }}"
+                                       class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600 transition shadow">
+                                        ✏️ Edit
+                                    </a>
+                                    <!-- Tombol Hapus -->
+                                    <form action="{{ route('students.destroy', $student) }}" method="POST" 
+                                          onsubmit="return confirm('Yakin hapus siswa?')">
+                                        @csrf @method('DELETE')
+                                        <button type="submit"
+                                                class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-white bg-red-500 rounded-md hover:bg-red-600 transition shadow">
+                                            🗑️ Hapus
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="4" class="px-4 py-6 text-center text-gray-500">Tidak ada data siswa</td>
+                        </tr>
+                    @endforelse
+                </tbody>
+            </table>
+        </div>
 
-        <div class="mt-4">
+        <!-- Pagination -->
+        <div class="mt-6">
             {{ $students->links() }}
         </div>
     </div>
